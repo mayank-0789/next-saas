@@ -31,7 +31,7 @@ model Stream {
   active      Boolean    @default(true)
   title       String?
   description String?
-  url         String
+  url         String     @unique
   extractedId String
   upvotes     UpVote[]
   userId      String
@@ -57,6 +57,7 @@ model UpVote {
 
 enum Provider {
   Google
+  Github
 }
 
 enum StreamType {
